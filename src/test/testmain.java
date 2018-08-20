@@ -33,15 +33,17 @@ public class testmain extends TestCase {
 		  BufferedReader br = new BufferedReader(new FileReader(file));
 		 
 		  String st;
+		  int compteur = 0 ;
+		  
 		  while ((st = br.readLine()) != null){
 			  
 			  String[] stFin = st.split(";");
-				double a= Double.parseDouble(((stFin[0]))); ;
+				double a= Double.parseDouble((stFin[0])); ;
 				double b = Double.parseDouble((stFin[1]));;
 				double c = Double.parseDouble((stFin[2]));;
 				double res1 = Double.parseDouble((stFin[3])) ;
-				assertTrue("a: " +a+ "   b:  "+b+ "     c:   "+c + "resultat trouver  est   :   "+ res1 +"Resultat trouver   est : "+tri.Tritype(a, b, c),tri.Tritype(a, b, c) == res1);
-
+				assertTrue("a: " +a+ "   b:  "+b+ "     c:   "+c +"\nCas de test N : " + compteur+ "resultat trouver  est   :   "+ res1 +"Resultat trouver   est : "+tri.Tritype(a, b, c),tri.Tritype(a, b, c) == res1);
+				compteur++;
 			  
 		  }
 		  
