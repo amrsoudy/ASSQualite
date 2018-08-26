@@ -2,12 +2,9 @@ package main;
 
 import jdk.nashorn.internal.runtime.arrays.IntElements;
 
-public class mainclass implements InterfaceMain, IntElements {
+public class mainclass implements InterfaceMain {
 
-	public int getElementWeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 	public int Tritype(double a, double b, double c) {
 		// TODO Auto-generated method stub
@@ -23,6 +20,7 @@ public class mainclass implements InterfaceMain, IntElements {
 		trityp= 2;
 		return trityp;
 	}
+
 
 
 

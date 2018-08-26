@@ -10,21 +10,6 @@ import junit.framework.TestCase;
 
 public class testmain extends TestCase {
 
-	public testmain(String name) {
-		super(name);
-	}
-
-	protected void setUp() throws Exception {
-		super.setUp();
-	}
-
-	protected void tearDown() throws Exception {
-		super.tearDown();
-	}
-
-	public void testGetElementWeight() {
-	}
-
 	public void testTritype() throws IOException {
 		mainclass tri = new mainclass();
 		
