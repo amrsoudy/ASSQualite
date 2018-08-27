@@ -1,41 +1,154 @@
-package test;
+class ConverterClassTest {
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
-import main.mainclass;
-import junit.framework.TestCase;
-
-public class testmain extends TestCase {
-
-	public void testTritype() throws IOException {
-		mainclass tri = new mainclass();
+	@Test
+	void testConvert() {
+		ConverterClass conv = new ConverterClass();
+		int tool ;
+		int sens;
+		double val ;
+		double res ;
+		int count = 1 ;
 		
-		File file = new File("C:\\Users\\1795162\\Documents\\GitHub\\ASSQualite\\Classeur1.txt");
-		 
-		  BufferedReader br = new BufferedReader(new FileReader(file));
-		 
-		  String st;
-		  int compteur = 0 ;
-		  
-		  while ((st = br.readLine()) != null){
-			  
-			  String[] stFin = st.split(";");
-				double a= Double.parseDouble((stFin[0])); ;
-				double b = Double.parseDouble((stFin[1]));;
-				double c = Double.parseDouble((stFin[2]));;
-				double res1 = Double.parseDouble((stFin[3])) ;
-				assertTrue("a: " +a+ "   b:  "+b+ "     c:   "+c +"\nCas de test N : " + compteur+ "resultat trouver  est   :   "+ res1 +"Resultat trouver   est : "+tri.Tritype(a, b, c),tri.Tritype(a, b, c) == res1);
-				compteur++;
-			  
-		  }
-		  
-		  br.close();
-		    
-		  
+		
+		tool = 1 ;
+		sens = 1;
+		val = 400;
+		res = 752;
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),conv.Convert(tool, sens, val) == res );
+		count ++;
+		
+		tool = 1 ;
+		sens = 2;
+		val = 400;
+		res = 204;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 1 ;
+		sens = 2;
+		val = 400.99;
+		res = 205;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 1 ;
+		sens = 3;
+		val = 400;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 1 ;
+		sens = 1;
+		val = 600;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 1 ;
+		sens = -1;
+		val = -99;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 2 ;
+		sens = 1;
+		val = 100;
+		res = 161;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		
+		tool = 2 ;
+		sens = 1;
+		val = 200.9999;
+		res = 323;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 2 ;
+		sens = 2;
+		val = 100;
+		res = 62;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 2 ;
+		sens = 2;
+		val = -3;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		
+		
+		tool = 2 ;
+		sens = 3;
+		val = -4;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 3 ;
+		sens = 1;
+		val = 400;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		tool = 4 ;
+		sens = 1;
+		val = -500;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+
+		tool = 2 ;
+		sens = 3;
+		val = 400;
+		res = 0;
+
+		
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		
+		tool = 2 ;
+		sens = 3;
+		val = 400;
+		res = 5;
+
+		assertTrue("cas de test No :  "+count+"Tool =  "+tool+"   sens = "+sens + " val =  "+ val +" result attendus = " +res +" Resulte obtenus = "+conv.Convert(tool, sens, val),Math.round(conv.Convert(tool, sens, val))== res );
+		count ++;
+		
+		
+		
 		
 	}
-
-}
+	
